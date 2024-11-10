@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Aniversário!</title>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+   background: rgb(34,193,195);
+background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,45,173,1) 100%);
+    text-align: center;
+    overflow: hidden;
+   
+}
+
+header {
+    margin-top: 50px;
+    position: relative;
+    z-index: 10;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+p {
+
+    font-size: 1.5rem;
+    margin-bottom: 50px;
+    animation: fadeIn 2s ease-in-out 0.5s;
+}
+
+.video-section {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+}
+
+.video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+video {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+footer {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    font-size: 1.2rem;
+    color: #ff69b4;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1.2rem;
+    }
+
+    video {
+        object-position: center;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Feliz Aniversário, Amor!</h1>
+        <p>Que seus 20 anos sejam incríveis, repletos de alegria e amor. 💖</p>
+    </header>
+
+    <section class="video-section">
+        <div class="video-container">
+            <video autoplay play loop>
+                <source src="aniversario.mp4" type="video/mp4">
+                Seu navegador não suporta o vídeo.
+            </video>
+        </div>
+        <div class="overlay"></div>
+    </section>
+
+    <section class="effects">
+        <div id="hearts"></div>
+        <div id="fireworks"></div>
+    </section>
+
+    <footer>
+        <p>Com amor, de alguém muito especial. ❤️</p>
+    </footer>
+
+    <script>
+document.addEventListener('DOMContentLoaded', function () {
+    // Animação de corações
+    for (let i = 0; i < 10; i++) {
+        const heart = document.createElement('div');
+        heart.classList.add('heart');
+        document.getElementById('hearts').appendChild(heart);
+
+        // Adicionar corações com posições aleatórias
+        heart.style.left = `${Math.random() * 100}vw`;
+        heart.style.animationDelay = `${Math.random() * 2}s`;
+    }
+
+    // Efeito de rojão
+    for (let i = 0; i < 5; i++) {
+        const firework = document.createElement('div');
+        firework.classList.add('firework');
+        document.getElementById('fireworks').appendChild(firework);
+
+        // Posições e tempo aleatório para os rojões
+        firework.style.left = `${Math.random() * 100}vw`;
+        firework.style.top = `${Math.random() * 50}vh`;
+        firework.style.animationDelay = `${Math.random() * 2}s`;
+    }
+});
+
+    </script>
+</body>
+</html>
